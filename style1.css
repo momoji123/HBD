@@ -6,8 +6,9 @@ body{
 	font-family:arial;
 	background-image:url("Images/Background.jpg");
 	background-color:white;
-	background-position:left top;
+	background-position:center;
 	background-attachment:fixed;
+	background-size:cover;
 }
 
 #fade{
