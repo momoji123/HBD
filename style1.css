@@ -4,7 +4,7 @@ header{
 
 body{
 	font-family:arial;
-	background-image:url("Images/background.jpg");
+	background-image:url("./Images/background.jpg");
 	background-color:white;
 	background-position:left top;
 	background-attachment:fixed;
