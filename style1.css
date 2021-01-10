@@ -1,0 +1,136 @@
+header{
+	background-clip:border-box;
+}
+
+body{
+	font-family:arial;
+	background-image:url("Images/background.jpg");
+	background-color:white;
+	background-position:left top;
+	background-attachment:fixed;
+}
+
+#fade{
+	opacity:0;
+	transition:opacity 0.5s ease;
+}
+
+#hide{
+	position:absolute;
+	width:0;
+	overflow:hidden;
+	opacity:0;
+	transition:opacity 0.0s ease;
+	user-select: none;
+}
+
+#idle{
+	opacity:1;
+	transition:opacity 0.5s ease;
+}
+
+#flip{
+	opacity:1;
+	transition:opacity 0.5s ease;
+}
+
+#hello{
+	font-size:45px;
+	margin-top:2.5%;
+}
+
+#counter{
+	font-size:45px
+}
+
+.opening_section{
+	text-align:center
+}
+
+.gift_button{
+	color:black;
+	background-color:red;
+	display:inline-block;
+	padding: 13px 15px;
+	border: 1px solid black;
+	border-radius:5px;
+	user-select: none;
+	margin-top:10%;
+}
+
+.gift_button#locked{
+	background-color:#ffb3b3;
+}
+
+.gift_button:hover{
+	background-color:#ff1a1a;
+}
+
+.gift_button:active{
+	background-color:#990000;
+}
+.gift_button#clicked{
+	background-color:#990000;
+}
+
+
+
+.tab{
+	background-color: rgba(247, 238, 207,.8);
+	margin-top:30px;
+	margin-left:30%;
+	margin-right:30%;
+	padding:0;
+	text-align:center;
+	overflow:hidden;
+	display:flex;
+	padding:10px;
+	border:1px solid black;
+	border-radius:10px;
+}
+
+.tab_btn{
+	margin:auto;
+	padding:1%;
+	text-align:center;
+	background-color:#e9d17c;
+	color:black;
+	
+	float:left;
+	border:1px solid black; 
+	border-collapse:collapse;
+	display:inline-block;
+	width:100%;
+	border-radius:6px;
+	user-select: none;
+}
+
+.tab_btn:hover{
+	background-color:#f0e1a8
+}
+
+.tab_btn:active{
+	background-color:#deba3b
+}
+
+.tab_btn#clicked{
+	background-color:#deba3b
+}
+
+.content{
+	background-color: rgba(247, 238, 207,.8);
+	margin-top:10px;
+	margin-left:15%;
+	margin-right:15%;
+	padding:15px;
+	border:2px solid black;
+	border-bottom-right-radius:25px;
+	border-top-left-radius:25px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+}
+
+
+tabular{
+	padding-left:2.5em;
+}
