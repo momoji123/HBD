@@ -173,7 +173,7 @@ body{
 	border-radius:6px;
 	user-select: none;
 	background-color:red;
-	padding:1%;
+	padding:1%; 
 }
 .previous:hover{
 	background-color:#ff4d4d;
