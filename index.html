@@ -4,38 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=.8">
 		<title>Kikai's Birthday</title>
-		<link rel="stylesheet" href="style1.css">	
-		<script>
-			function includeHTML() {
-			  var z, i, elmnt, file, xhttp;
-			  /* Loop through a collection of all HTML elements: */
-			  z = document.getElementsByTagName("*");
-			  for (i = 0; i < z.length; i++) {
-				elmnt = z[i];
-				/*search for elements with a certain atrribute:*/
-				file = elmnt.getAttribute("w3-include-html");
-				if (file) {
-				  /* Make an HTTP request using the attribute value as the file name: */
-				  xhttp = new XMLHttpRequest();
-				  xhttp.onreadystatechange = function() {
-					if (this.readyState == 4) {
-					  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-					  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-					  /* Remove the attribute, and call this function once more: */
-					  elmnt.removeAttribute("w3-include-html");
-					  includeHTML();
-					}
-				  }
-				  xhttp.open("GET", file, true);
-				  xhttp.send();
-				  /* Exit the function: */
-				  return;
-				}
-			  }
-			}
-		</script>
-	</head>
-	
+		<link rel="stylesheet" href="style1.css">
+	</head>	
 	<body>
 		<header>
 			<section class="opening_section">
@@ -43,7 +13,6 @@
 					<h1 id="hello">Hello Kikai!</h1>
 					<h3 class="counter_desc" id="idle">You will be a birthday girl in</h3>
 					<h1 class="counter" id="idle">Calculating time...</h1>
-					<script src="main.js"></script>
 				<div>
 			</section>
 		</header>
@@ -80,13 +49,23 @@
 					
 					<div class="quiz" id="hide">
 						<h1 style="text-align:center">Quiz for birthday girl</h1>
-						<tabular>"But I must explain to you how all this mistaken idea of denouncing pleasure 
-						and praisasfasfsafasdflly encounter consequences that are extremely painful. 
-						Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-						but because occasionally circumstances occur in which toil and pain can procure him some great 
-						pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, 
-						except to obtain some advantage from it? But who has any right to find fault with a man who chooses 
-						to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+						<div class="question">must explain to you how all this mistaken idea of denouncing pleasure 
+						and praising pain was born and I will give you a complete account of the system,</div>
+						
+						<form class="quiz">
+							<label for="answer" id="answerLabel">Answer:</label>
+							<input type="text" id="answer"/> 
+							<span class="submit" onclick="submit()">Submit</span>
+							<span class="result" id="hide"></span>
+						</form>
+						
+						
+						<h2 class="score" id="text">Score: <span class="score" id="score">0</span></h2>
+						
+						<div class="prev-next"> 
+							<span class="previous">Previous</span>
+							<span class="next">Next</span>
+						</div>
 					</div>
 					
 					<div class="request" id="hide">
@@ -111,5 +90,8 @@
 				</section>
 			</section>
 		</main>
+		
+		<script src="main.js"></script>	
+		<script src="qna.js"></script>	
 	</body>
 </html>
