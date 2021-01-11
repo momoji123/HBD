@@ -119,17 +119,12 @@ function update(){
 
 var loopCount = setInterval(update,1000);
 
-console.log("done");
-
 function giftButtonClick(){
 	document.querySelector(".gift_button").id="clicked";
 	document.querySelector(".tab").id = "flip";
 	let buttons = document.querySelectorAll(".tab_btn");
-	console.log(buttons);
 	for(let i=0;i<buttons.length;i++){
 		let id = buttons[i].getAttribute("id");
-		
-		console.log(id);
 		switch(id){
 			case "tb1":
 				buttons[i].setAttribute('onclick',"openLetter()");

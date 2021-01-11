@@ -1,17 +1,17 @@
 var question = [
-"The quote at the beginning of the letter that you should have read is a quote from a book. What is the title of the book?",
+"<h1>Let's see how literate you're :P</h1> The quote at the beginning of the letter that you should have read before is a quote from a book. What is the title of the book?",
 "<h1>Math riddle!</h1> My twin lives at the reverse of my house number. The difference between our house numbers ends in two. What are the lowest possible numbers of our house? (put only one of them)",
-"quetion3",
-"quetion4",
-"question5"
+"<h1>Hide and Seek in the Music!</h1> Find the only German song in my playlist! The title is the answer ofcourse.",
+"<h1>Let's see how high tech you're!</h1> It's not even a question.. Just find the answer no matter how!! (Hint: can't find the answer with mobile devices)",
+"<h1>The easiest one!</h1> What is my favorite bread?"  
 ];
 
 var answer = [
-"on the ends of good and evil",
+"On the ends of good and evil",
 ["91","19"],
-"answer3",
-"answer4",
-"answer5"
+"Irgendwie, Irgendwo, Irgendwann",
+"find me please!",
+"croissant"
 ];
 
 var rightAnswer = [
@@ -54,40 +54,34 @@ ansElmnt.addEventListener("keyup", function(event) {
 function submit(){
 	if (!rightAnswer[i]){
 		let input = ansElmnt.value.toLocaleLowerCase();
-		input = cleanInput(input)
-		console.log("cleaned input: ", input);
+		input = cleanAll(input);
 		if(typeof answer[i] === 'string'){
-			if(input == answer[i]){
+			let cleanAnswer = cleanAll(answer[i]);
+			if(input == cleanAnswer){
 				resElmnt.id="right";
 				rightAnswer[i] = true;
 				scoring()
 				showScore();
-				console.log(ansElmnt.value);
-				console.log("true");
 			}else{
 				resElmnt.id="wrong";
-				console.log(ansElmnt.value);
-				console.log("false");
 			}
 		}else{
-			
-			console.log("Answer is a list")
 			let check = false;
 			for(let j=0;j<answer[i].length;j++){
-				if(input == answer[i][j]){
+				let cleanAnswer = cleanAll(answer[i][j]);
+				if(input == cleanAnswer){
 					resElmnt.id="right";
 					rightAnswer[i] = true;
 					scoring()
 					showScore();
 					check = true;
-					console.log(ansElmnt.value);
-					console.log("true");
 				}else if (!check && j==answer[i].length-1){
 					resElmnt.id="wrong";
-					console.log(ansElmnt.value);
-					console.log("false");
 				}
 			}
+		}
+		if (i==3){
+			console.log(answer[i]);
 		}
 	}
 }
@@ -103,7 +97,6 @@ function scoring(result){
 		}
 	}
 	score = Math.ceil(right/rightAnswer.length * 100);
-	console.log(score);
 	
 	if (score==100){
 		reqBtn.id="tb3";
@@ -113,26 +106,26 @@ function scoring(result){
 }
 
 function showScore(){
-	scrBtn.textContent=score.toString();
+	scrBtn.textContent=score.toString()
+	if(score==100){
+			scrBtn.textContent += " Congrats! Request button unlocked!";
+	}
 }
 
-function cleanInput(input){ //lower case all chars and eleminate space at the end
-	input = input.toLocaleLowerCase();
-	let split=input.split("");
-	
-	input = "";
+function cleanAll(input){
+	let split = input.split(" ");
+	input="";
 	while(true){
-		if (split[split.length-1]!=" "){
-			
-			for(let j=0; j<split.length;j++){
-				input += split[j];
-			}
-			return input;
-		}else{
+		if(split[split.length-1]==""){
 			split.pop();
-			console.log("popped!");
+		}else{
+			break;
 		}
 	}
+	while (split.length!=0){
+		input += split.shift().toLocaleLowerCase();
+	}
+	return input;
 }
 
 function prvNxtStat(){ //Update next or previous buttons (lock or unlock)
