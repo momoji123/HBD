@@ -1,18 +1,21 @@
 var question = [
-"quetion1",
-"quetion2",
+"The quote at the beginning of the letter that you should have read is a quote from a book. What is the title of the book?",
+"<h1>Math riddle!</h1> My twin lives at the reverse of my house number. The difference between our house numbers ends in two. What are the lowest possible numbers of our house? (put only one of them)",
 "quetion3",
-"quetion4"
+"quetion4",
+"question5"
 ];
 
 var answer = [
-"answer1",
-"answer2",
+"on the ends of good and evil",
+["91","19"],
 "answer3",
-"answer4"
+"answer4",
+"answer5"
 ];
 
 var rightAnswer = [
+false,
 false,
 false,
 false,
@@ -34,6 +37,7 @@ var resElmnt = document.querySelector(".result");
 var prevBtn = document.querySelector(".previous");
 var nextBtn = document.querySelector(".next");
 var scrBtn = document.querySelector(".score#score");
+var reqBtn = document.querySelector(".tab_btn#locked3");
 
 prvNxtStat(); 
 resetAnsField();
@@ -52,17 +56,38 @@ function submit(){
 		let input = ansElmnt.value.toLocaleLowerCase();
 		input = cleanInput(input)
 		console.log("cleaned input: ", input);
-		if(input === answer[i]){
-			resElmnt.id="right";
-			rightAnswer[i] = true;
-			scoring()
-			showScore();
-			console.log(ansElmnt.value);
-			console.log("true");
+		if(typeof answer[i] === 'string'){
+			if(input == answer[i]){
+				resElmnt.id="right";
+				rightAnswer[i] = true;
+				scoring()
+				showScore();
+				console.log(ansElmnt.value);
+				console.log("true");
+			}else{
+				resElmnt.id="wrong";
+				console.log(ansElmnt.value);
+				console.log("false");
+			}
 		}else{
-			resElmnt.id="wrong";
-			console.log(ansElmnt.value);
-			console.log("false");
+			
+			console.log("Answer is a list")
+			let check = false;
+			for(let j=0;j<answer[i].length;j++){
+				if(input == answer[i][j]){
+					resElmnt.id="right";
+					rightAnswer[i] = true;
+					scoring()
+					showScore();
+					check = true;
+					console.log(ansElmnt.value);
+					console.log("true");
+				}else if (!check && j==answer[i].length-1){
+					resElmnt.id="wrong";
+					console.log(ansElmnt.value);
+					console.log("false");
+				}
+			}
 		}
 	}
 }
@@ -77,8 +102,14 @@ function scoring(result){
 			right++;
 		}
 	}
-	score = right/rightAnswer.length * 100;
-	return score
+	score = Math.ceil(right/rightAnswer.length * 100);
+	console.log(score);
+	
+	if (score==100){
+		reqBtn.id="tb3";
+		reqBtn.setAttribute('onclick',"openRequest()");
+	}
+	return score;
 }
 
 function showScore(){
@@ -159,5 +190,5 @@ function resetAnsField(){
 }
 
 function showQ(){
-	qElmnt.textContent = question[i];
+	qElmnt.innerHTML = question[i];
 }

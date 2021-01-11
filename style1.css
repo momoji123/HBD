@@ -98,7 +98,7 @@ body{
 	margin:auto;
 	padding:0.5%;
 	text-align:center;
-	background-color:#e9d17c;
+	background-color:#dab325;
 	color:black;
 	font-size:25px;
 	float:left;
@@ -111,15 +111,19 @@ body{
 }
 
 .tab_btn:hover{
-	background-color:#f0e1a8
+	background-color:#e9d17c;
 }
 
 .tab_btn:active{
-	background-color:#deba3b
+	background-color:#997d1a;
 }
 
 .tab_btn#clicked{
-	background-color:#deba3b
+	background-color:#997d1a;
+}
+
+.tab_btn#locked3{
+	background-color:#57480f;
 }
 
 .content{
@@ -237,4 +241,9 @@ input#answer{
 
 tabular{
 	padding-left:2.5em;
+}
+
+.spotify{
+	margin:5%;
+	overflow:hidden;
 }

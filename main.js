@@ -82,7 +82,6 @@ function countdown(target){
 function runAnimation(){
 	let staticWord = document.querySelector(".counter_desc");
 	let changingWord = document.querySelector(".counter");
-	staticWord.textContent = "Happy Birthday to My";
 	
 	document.querySelector(".gift_button").id = "unlocked";
 	document.querySelector(".gift_button").textContent = "Open the gift!";
@@ -98,6 +97,7 @@ function runAnimation(){
 			changingWord.textContent = words[index];
 			changingWord.id = "flip";
 			if (staticWord.id == "fade"){
+				staticWord.textContent = "Happy Birthday to";
 				staticWord.id = "flip";
 			}
 			index++;
@@ -138,7 +138,7 @@ function giftButtonClick(){
 				buttons[i].setAttribute('onclick',"openQuiz()");
 				break;
 			case "tb3":
-				buttons[i].setAttribute('onclick',"openRequest()");
+				buttons[i].setAttribute('onclick',"");
 				break;
 		}
 	}
