@@ -249,7 +249,7 @@ body{
 .specific{
 	margin:1.5%;
 	margin-top:0.5%;
-	width:80%;
+	width:95%;
 	height:300px;
 	resize:none;
 	font-size:20px;
@@ -283,5 +283,6 @@ tabular{
 select{
 	font-size:20px;
 	margin:1.5%;
+	width:95%;
 	display:inline-block;
 }
