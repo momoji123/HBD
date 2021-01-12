@@ -7,7 +7,7 @@ function getdiff(target){
 
 
 function update(){
-	countdown("Jan 12 2021, 00:00:00");
+	countdown("Jan 14 2021, 00:00:00");
 }
 
 var loopCount = setInterval(update,1000);
