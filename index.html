@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=.8">
 		<title>Kikai's Birthday</title>
 		<link rel="stylesheet" href="style1.css">
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		
 	</head>	
 	<body>
 		<header>
@@ -27,7 +29,8 @@
 				<div class="tab" id="hide">
 					<span class="tab_btn" id="tb1">Letter</span>
 					<span class="tab_btn" id="tb2">quiz</span>
-					<span class="tab_btn" id="locked3">Request</span>
+					<span class="tab_btn" id="tb3">Request</span>
+					<!--<span class="tab_btn" id="locked3">Request</span>-->
 				</div>
 				
 				<section class="content" id="hide">
@@ -70,22 +73,23 @@
 					
 					<div class="request" id="hide">
 						<h1 style="text-align:center">Request from birthday girl</h1>
-						<tabular>"But I must explain to you how all this mistaken idea of denouncing pleasure 
-						and praising pain was born and I will give you a complete account of the system, and 
-						expound the actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. 
-						Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-						but because occasionally circumstances occur in which toil ande actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure e actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure e actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure  pain can procure him some great 
-						pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, 
-						except to obtain some advantage from it? But who has any right to find fault with a man who chooses 
-						to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+						<div class="reqContainer" id="opening">
+							Hello! Congratulation and happy birthday for you! Because you have successfully answer all the questions, you get <span class="reqRest"><b>3</b></span> Requests! Choose it wisely...
+						</div>
+						<select id="slctReq" name="cars">
+						  <option value="1">Food and drink from Gojek</option>
+						  <option value="2">Want me to change something</option>
+						  <option value="3">Want me to do something *possible*</option>
+						  <option value="4">Do something together</option>
+						  <option value="5">Buy something from some online shop</option>
+						  <option value="6">Ask some random questions</option>
+						  <option value="7">Help you with something</option>
+						</select>
+						<div style="margin-left:1.5%">Specification:</div>
+						<div>
+							<textarea class="specific" id="specific">Type the details here...</textarea>
+						</div>
+						<span class="submit" id="request" onclick="sendRequest()">Submit</span>
 					</div>
 				</section>
 			</section>
@@ -93,11 +97,12 @@
 		
 		<footer>
 			<div class="spotify">
-				<iframe src="https://open.spotify.com/embed/playlist/2uBESKeAQw9WeSCzT1F0kT" width="100%" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				<iframe src="https://open.spotify.com/embed/playlist/2uBESKeAQw9WeSCzT1F0kT" width="100%" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius:10px;opacity:0.9"></iframe>
 			</div>
 		</footer>
 		
 		<script src="main.js"></script>	
-		<script src="qna.js"></script>	
+		<script src="qna.js"></script>
+		<script src="req.js"></script>		
 	</body>
 </html>

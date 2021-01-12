@@ -5,6 +5,13 @@ function getdiff(target){
     return Hday - now
 }
 
+
+function update(){
+	countdown("Jan 10 2021, 18:7:15");
+}
+
+var loopCount = setInterval(update,1000);
+
 function timeFormat(time){
     let unit = ["s","Minute(s)","Hour(s)","Day(s)"];
     let index = 0;
@@ -87,7 +94,15 @@ function runAnimation(){
 	document.querySelector(".gift_button").textContent = "Open the gift!";
 	document.querySelector(".gift_button").setAttribute('onclick',"giftButtonClick()");
 	
-	let words = ["my Kikai"," my darl"," the smartest girl"," the most beautiful girl"," the manja person"," manusia yg suka nyombong"," my everything"];
+	let words = [
+	"My Kikai",
+	"My Darling",
+	"The Smartest",
+	"The Most Beautiful",
+	"The Manja Person",
+	"Manusia Sombong",
+	"My Cat Lover",
+	"My everything!"];
 	let index = 0;
 	let wordsLoop = setInterval(updateWords,1500);
 	
@@ -113,11 +128,6 @@ function runAnimation(){
 
 }
 
-function update(){
-	countdown("Jan 10 2021, 18:7:15");
-}
-
-var loopCount = setInterval(update,1000);
 
 function giftButtonClick(){
 	document.querySelector(".gift_button").id="clicked";
@@ -133,7 +143,8 @@ function giftButtonClick(){
 				buttons[i].setAttribute('onclick',"openQuiz()");
 				break;
 			case "tb3":
-				buttons[i].setAttribute('onclick',"");
+				buttons[i].setAttribute('onclick',"openRequest()");
+				//buttons[i].setAttribute('onclick',"");
 				break;
 		}
 	}

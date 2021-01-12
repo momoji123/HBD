@@ -152,11 +152,11 @@ body{
 }
 
 .submit:hover{
-	background-color:#f0e1a8
+	background-color:#f0e1a8;
 }
 
 .submit:active{
-	background-color:#deba3b
+	background-color:#deba3b;
 }
 
 .result#right::before{
@@ -169,6 +169,19 @@ body{
 	color:red;
 	transition:all 0.5 ease;
 	content:"Wrong Answer!";
+}
+
+.submit#request{
+	margin-bottom:0.8%;
+	margin-left:1.5%;
+	display:inline-block;
+}
+
+.submit#clicked{
+	margin-bottom:0.8%;
+	margin-left:1.5%;
+	display:inline-block;
+	background-color:#deba3b;
 }
 
 .previous{
@@ -225,6 +238,25 @@ body{
 	text-align:center;
 }
 
+.reqContainer#opening{
+	margin:1.5%;
+}
+
+.reqRest{
+	font-size:20px;
+}
+
+.specific{
+	margin:1.5%;
+	margin-top:0.5%;
+	width:80%;
+	height:300px;
+	resize:none;
+	font-size:20px;
+}
+
+
+
 div.quiz{
 	width:100%;
 	margin-top:3%;
@@ -246,4 +278,10 @@ tabular{
 .spotify{
 	margin:5%;
 	overflow:hidden;
+}
+
+select{
+	font-size:20px;
+	margin:1.5%;
+	display:inline-block;
 }
