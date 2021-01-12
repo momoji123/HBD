@@ -7,7 +7,7 @@ function getdiff(target){
 
 
 function update(){
-	countdown("Jan 10 2021, 18:7:15");
+	countdown("Jan 12 2021, 00:00:00");
 }
 
 var loopCount = setInterval(update,1000);
@@ -143,8 +143,8 @@ function giftButtonClick(){
 				buttons[i].setAttribute('onclick',"openQuiz()");
 				break;
 			case "tb3":
-				buttons[i].setAttribute('onclick',"openRequest()");
-				//buttons[i].setAttribute('onclick',"");
+				//buttons[i].setAttribute('onclick',"openRequest()");
+				buttons[i].setAttribute('onclick',"");
 				break;
 		}
 	}

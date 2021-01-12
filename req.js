@@ -26,10 +26,10 @@ function sendRequest(){
 		}
 		
 		Email.send({
-			SecureToken : "a0a68d08-e315-4544-a055-e43913850765",
-			To : 'me@momoji123.com',
-			From : "request@momoji123.com",
-			Subject : "test request",
+			SecureToken : "f5bb9dcd-b179-427f-9c40-8fd37ca2cfe4",
+			To : 'rozaan01@gmail.com',
+			From : "rozaan002@gmail.com",
+			Subject : "Birthday request!",
 			Body : `request : <br/>${request} <br/> <hr/> The specification : <br/>${specification}`
 		}).then(
 		  message => alert(message)
@@ -37,7 +37,7 @@ function sendRequest(){
 
 		j--;
 		rest.textContent = j;
-		setTimeout(() => {enableBtn(submitBtn);areaElement.value="";},2000);
+		setTimeout(() => {enableBtn(submitBtn);areaElement.value="";},5000);
 		
 	}
 	
