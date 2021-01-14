@@ -2,7 +2,7 @@ var question = [
 "<h1>Let's see how literate you're :P</h1> The quote at the beginning of the letter that you should have read before is a quote from a book. What is the title of the book?",
 "<h1>Math riddle!</h1> My twin lives at the reverse of my house number. The difference between our house numbers ends in two. What are the lowest possible numbers of our house? (put only one of them)",
 "<h1>Hide and Seek in the Music!</h1> Find the only German song in my playlist! The title is the answer ofcourse.",
-"<h1>Let's see how high tech you're!</h1> It's not even a question.. Just find the answer no matter how!! (Hint: can't find the answer with mobile devices)",
+"<h1>Let's guess then!</h1> 4 numbers.",
 "<h1>The easiest one!</h1> What is my favorite bread?"  
 ];
 
@@ -10,7 +10,7 @@ var answer = [
 "On the ends of good and evil",
 ["91","19"],
 "Irgendwie, Irgendwo, Irgendwann",
-"find me please!",
+"1625",
 "croissant"
 ];
 
@@ -52,6 +52,7 @@ ansElmnt.addEventListener("keyup", function(event) {
 });
 
 function submit(){
+	document.querySelector(".info").innerHTML = "";
 	if (!rightAnswer[i]){
 		let input = ansElmnt.value.toLocaleLowerCase();
 		input = cleanAll(input);
@@ -81,7 +82,21 @@ function submit(){
 			}
 		}
 		if (i==3){
-			console.log(answer[i]);
+			let trueNumber = 0;
+			let rightPlace = 0;
+			for (let j=0;j<input.length;j++){
+				console.log("input: ", input[j])
+				console.log("answer: ", answer[i][j])
+				if(input[j]==answer[i][j]){
+					trueNumber ++
+					rightPlace ++
+				}else if (input[j] == '1' ||input[j] == '6' ||input[j] == '2' ||input[j] == '5'){
+					trueNumber ++
+				}
+			}
+			document.querySelector(".info").innerHTML = "True Number: " + trueNumber + "<br>Right Place: " + rightPlace;
+			console.log("true Number: ", trueNumber);
+			console.log("right Place: ", rightPlace);
 		}
 	}
 }
