@@ -143,8 +143,8 @@ function giftButtonClick(){
 				buttons[i].setAttribute('onclick',"openQuiz()");
 				break;
 			case "tb3":
-				buttons[i].setAttribute('onclick',"openRequest()");
-				//buttons[i].setAttribute('onclick',"");
+				//buttons[i].setAttribute('onclick',"openRequest()");
+				buttons[i].setAttribute('onclick',"");
 				break;
 		}
 	}
