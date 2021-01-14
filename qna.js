@@ -167,6 +167,7 @@ function nextQ(){
 	showQ();
 	resetAnsField();
 	prvNxtStat();
+	document.querySelector(".info").innerHTML = "";
 	
 	if (rightAnswer[i]){
 		resElmnt.id="right";
@@ -183,6 +184,7 @@ function prevQ(){
 	showQ();
 	resetAnsField();
 	prvNxtStat();
+	document.querySelector(".info").innerHTML = "";
 	
 	if (rightAnswer[i]){
 		resElmnt.id="right";
