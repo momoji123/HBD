@@ -6,8 +6,9 @@ body{
 	font-family:arial;
 	background-image:url("Images/Background.jpg");
 	background-color:white;
-	background-position:left top;
+	background-position:center;
 	background-attachment:fixed;
+	background-size:cover;
 }
 
 #fade{
@@ -20,7 +21,7 @@ body{
 	width:0;
 	overflow:hidden;
 	opacity:0;
-	transition:opacity 0.0s ease;
+	transition:opacity 0.5s ease;
 	user-select: none;
 }
 
@@ -39,8 +40,12 @@ body{
 	margin-top:2.5%;
 }
 
-#counter{
-	font-size:45px
+.counter_desc{
+	font-size:30px;
+}
+
+.counter{
+	font-size:40px
 }
 
 .opening_section{
@@ -55,11 +60,11 @@ body{
 	border: 1px solid black;
 	border-radius:5px;
 	user-select: none;
-	margin-top:10%;
+	margin-top:30px;
 }
 
 .gift_button#locked{
-	background-color:#ffb3b3;
+	background-color:#990000;
 }
 
 .gift_button:hover{
@@ -78,8 +83,8 @@ body{
 .tab{
 	background-color: rgba(247, 238, 207,.8);
 	margin-top:30px;
-	margin-left:30%;
-	margin-right:30%;
+	margin-left:5%;
+	margin-right:5%;
 	padding:0;
 	text-align:center;
 	overflow:hidden;
@@ -91,11 +96,11 @@ body{
 
 .tab_btn{
 	margin:auto;
-	padding:1%;
+	padding:0.5%;
 	text-align:center;
-	background-color:#e9d17c;
+	background-color:#dab325;
 	color:black;
-	
+	font-size:25px;
 	float:left;
 	border:1px solid black; 
 	border-collapse:collapse;
@@ -106,22 +111,26 @@ body{
 }
 
 .tab_btn:hover{
-	background-color:#f0e1a8
+	background-color:#e9d17c;
 }
 
 .tab_btn:active{
-	background-color:#deba3b
+	background-color:#997d1a;
 }
 
 .tab_btn#clicked{
-	background-color:#deba3b
+	background-color:#997d1a;
+}
+
+.tab_btn#locked3{
+	background-color:#57480f;
 }
 
 .content{
 	background-color: rgba(247, 238, 207,.8);
 	margin-top:10px;
-	margin-left:15%;
-	margin-right:15%;
+	margin-left:5%;
+	margin-right:5%;
 	padding:15px;
 	border:2px solid black;
 	border-bottom-right-radius:25px;
@@ -130,7 +139,150 @@ body{
 	border-bottom-left-radius:10px;
 }
 
+.submit{
+	margin-left:2%;
+	margin-right:2%;
+	padding:0.8%;
+	background-color:#e9d17c;
+	border:1px solid black; 
+	border-collapse:collapse;
+	border-radius:6px;
+	user-select: none;
+	text-align:center;
+}
+
+.submit:hover{
+	background-color:#f0e1a8;
+}
+
+.submit:active{
+	background-color:#deba3b;
+}
+
+.result#right::before{
+	color:green;
+	transition:all 0.5 ease;
+	content:"Right Answer!";
+}
+
+.result#wrong::before{
+	color:red;
+	transition:all 0.5 ease;
+	content:"Wrong Answer!";
+}
+
+.submit#request{
+	margin-bottom:0.8%;
+	margin-left:1.5%;
+	display:inline-block;
+}
+
+.submit#clicked{
+	margin-bottom:0.8%;
+	margin-left:1.5%;
+	display:inline-block;
+	background-color:#deba3b;
+}
+
+.previous{
+	width:100%;
+	margin-right:5%;
+	margin-left:5%;
+	border:1px solid black; 
+	border-collapse:collapse;
+	display:inline-block;
+	border-radius:6px;
+	user-select: none;
+	background-color:red;
+	padding:1%; 
+}
+.previous:hover{
+	background-color:#ff4d4d;
+}
+.previous:active{
+	background-color:#b30000;
+}
+.previous#locked{
+	background-color:#b30000;
+}
+
+
+.next{
+	width:100%;
+	margin-right:5%;
+	margin-left:5%;
+	border:1px solid black; 
+	border-collapse:collapse;
+	display:inline-block;
+	border-radius:6px;
+	user-select: none;
+	background-color:#00b300;
+	padding:1%;
+}
+
+.next:hover{
+	background-color:#00cc00;
+}
+.next:active{
+	background-color:#004d00;
+}
+.next#locked{
+	background-color:#004d00;
+}
+
+.prev-next{
+	margin-top:5%;
+	border:none;
+	background-color:none;
+	display:flex;
+	text-align:center;
+}
+
+.reqContainer#opening{
+	margin:1.5%;
+}
+
+.reqRest{
+	font-size:20px;
+}
+
+.specific{
+	margin:1.5%;
+	margin-top:0.5%;
+	width:95%;
+	height:300px;
+	resize:none;
+	font-size:20px;
+}
+
+
+
+div.quiz{
+	width:100%;
+	margin-top:3%;
+}
+
+input#answer{
+	width:40%;
+	padding:0.8%;
+}
+
+#answerLabel{
+	margin-right:2%;
+}
 
 tabular{
 	padding-left:2.5em;
+}
+
+.spotify{
+	margin:5%;
+	overflow:hidden;
+}
+
+select{
+	font-size:20px;
+	margin:1.5%;
+	width:95%;
+	display:inline-block;
 }

@@ -2,40 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=.8">
 		<title>Kikai's Birthday</title>
-		<link rel="stylesheet" href="style1.css">	
-		<script>
-			function includeHTML() {
-			  var z, i, elmnt, file, xhttp;
-			  /* Loop through a collection of all HTML elements: */
-			  z = document.getElementsByTagName("*");
-			  for (i = 0; i < z.length; i++) {
-				elmnt = z[i];
-				/*search for elements with a certain atrribute:*/
-				file = elmnt.getAttribute("w3-include-html");
-				if (file) {
-				  /* Make an HTTP request using the attribute value as the file name: */
-				  xhttp = new XMLHttpRequest();
-				  xhttp.onreadystatechange = function() {
-					if (this.readyState == 4) {
-					  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-					  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-					  /* Remove the attribute, and call this function once more: */
-					  elmnt.removeAttribute("w3-include-html");
-					  includeHTML();
-					}
-				  }
-				  xhttp.open("GET", file, true);
-				  xhttp.send();
-				  /* Exit the function: */
-				  return;
-				}
-			  }
-			}
-		</script>
-	</head>
-	
+		<link rel="stylesheet" href="style1.css">
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		
+	</head>	
 	<body>
 		<header>
 			<section class="opening_section">
@@ -43,7 +15,6 @@
 					<h1 id="hello">Hello Kikai!</h1>
 					<h3 class="counter_desc" id="idle">You will be a birthday girl in</h3>
 					<h1 class="counter" id="idle">Calculating time...</h1>
-					<script src="main.js"></script>
 				<div>
 			</section>
 		</header>
@@ -58,13 +29,14 @@
 				<div class="tab" id="hide">
 					<span class="tab_btn" id="tb1">Letter</span>
 					<span class="tab_btn" id="tb2">quiz</span>
-					<span class="tab_btn" id="tb3">Request</span>
+					<!--<span class="tab_btn" id="tb3">Request</span>-->
+					<span class="tab_btn" id="locked3">Request</span>
 				</div>
 				
 				<section class="content" id="hide">
-					<div class="letter" id="hide">
+					<div class="letter" id="hide" >
 						<h1 style="text-align:center">Letter for birthday girl</h1>
-						<p>
+						<p style="margin-left:10%;margin-right:10%">
 							<tabular>"But I must explain to you how all this mistaken idea of denouncing pleasure 
 							and praising pain was born and I will give you a complete account of the system, and 
 							expound the actual teachings of the great explorer of the truth, the master-builder of human 
@@ -76,40 +48,77 @@
 							except to obtain some advantage from it? But who has any right to find fault with a man who chooses 
 							to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
 						</p>
+						<p style="margin-left:10%;margin-right:10%">
+							<tabular>Happy Birthday to you! I build this Webpage from 0 page and 0 skill LOL.. I know it's not perfect.. I just learnt it since I said "I learn for job" but it wasn't a lie,
+							this skill is so needed to apply many jobs. So before you start take the quiz and request, i recommend you to use your laptop instead of mobile devices.. Trust me.. 
+							The quiz is hard enough this time.. Maybe you can solve it with google some of the questions. But not all of them. To open the request bar, you need to solve ALL of the Questions.. 
+							My hypothesis is, you read this	at around 12 AM. I recommend you to sleep first and open this in your free time because the question need your full performance to be solved :P							
+						</p>
+						<p style="margin-left:10%;margin-right:10%">
+							<tabular>Btw.. I know this last days I can't talk much with you.. I seems very busy.. And yes.. I need to learn this new skill to make all of this work as planned, and I thought i
+							can finish this on Sunday.. But it takes more problem than I expected.. Plus you angry with me this past days.. That one not intentionally.. I'm sorry for that one but I can't do much
+							either.. The deadline for this web project is so close.. I made this letter ereyesterday (12.01.) and i still need to make sure it contains no significant bugs when you use this..
+							So yeah.. I'm sorry for your feeling in the past few days.. I hope you like this.. Again.. Happy birthday.. I hope all the best for you.. I love u..
+							<br>
+							<br>
+							<b>Rozaan Wiryanto</b>
+						</p>
 					</div>
 					
 					<div class="quiz" id="hide">
 						<h1 style="text-align:center">Quiz for birthday girl</h1>
-						<tabular>"But I must explain to you how all this mistaken idea of denouncing pleasure 
-						and praisasfasfsafasdflly encounter consequences that are extremely painful. 
-						Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-						but because occasionally circumstances occur in which toil and pain can procure him some great 
-						pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, 
-						except to obtain some advantage from it? But who has any right to find fault with a man who chooses 
-						to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+						<div class="question" style="margin-left:3%"></div>
+						<div class="info" style="margin-left:3%"></div>
+						<div class="quiz" style="margin-left:3%">
+							<label for="answer" id="answerLabel">Answer:</label>
+							<input type="text" id="answer"/> 
+							<span class="submit" onclick="submit()">Submit</span>
+							<span class="result" id="hide"></span>
+						</div>
+						
+						
+						<h2 class="score" id="text" style="margin-left:3%">Score: <span class="score" id="score">0</span></h2>
+						
+						<div class="prev-next"> 
+							<span class="previous">Previous</span>
+							<span class="next">Next</span>
+						</div>
 					</div>
 					
 					<div class="request" id="hide">
 						<h1 style="text-align:center">Request from birthday girl</h1>
-						<tabular>"But I must explain to you how all this mistaken idea of denouncing pleasure 
-						and praising pain was born and I will give you a complete account of the system, and 
-						expound the actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. 
-						Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-						but because occasionally circumstances occur in which toil ande actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure e actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure e actual teachings of the great explorer of the truth, the master-builder of human 
-						happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because 
-						those who do not know how to pursue pleasure  pain can procure him some great 
-						pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, 
-						except to obtain some advantage from it? But who has any right to find fault with a man who chooses 
-						to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+						<div class="reqContainer" id="opening">
+							Hello! Congratulation and happy birthday for you! Because you have successfully answer all the questions, you get <span class="reqRest"><b>3</b></span> Requests! Choose it wisely...
+						</div>
+						<select id="slctReq" name="cars">
+						  <option value="1">Food and drink from Gojek</option>
+						  <option value="2">Buy something from some online shop</option>
+						  <option value="3">Want a book!</option>
+						  <option value="4">Do something together</option>
+						  <option value="5">Want me to change something</option>
+						  <option value="6">Ask some random questions</option>
+						  <option value="7">Help you with something</option>
+						  <option value="8">Want me to do something *possible*</option>
+						  <option value="9">Other</option>
+						</select>
+						<div style="margin-left:1.5%">Specification:</div>
+						<div>
+							<textarea class="specific" id="specific">Type the details here...</textarea>
+						</div>
+						<span class="submit" id="request" onclick="sendRequest()">Submit</span>
 					</div>
 				</section>
 			</section>
 		</main>
+		
+		<footer>
+			<div class="spotify">
+				<iframe src="https://open.spotify.com/embed/playlist/2uBESKeAQw9WeSCzT1F0kT" width="100%" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius:10px;opacity:0.9"></iframe>
+			</div>
+		</footer>
+		
+		<script src="main.js"></script>	
+		<script src="qna.js"></script>
+		<script src="req.js"></script>		
 	</body>
 </html>

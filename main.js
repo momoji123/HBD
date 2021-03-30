@@ -2,8 +2,15 @@ function getdiff(target){
 	let Hday = Date.parse(target);
     let now = Date.now();
     
-    return Hday - now
+    return Hday - now;
 }
+
+
+function update(){
+	countdown("Jan 12 2021, 00:00:00");
+}
+
+var loopCount = setInterval(update,1000);
 
 function timeFormat(time){
     let unit = ["s","Minute(s)","Hour(s)","Day(s)"];
@@ -82,13 +89,20 @@ function countdown(target){
 function runAnimation(){
 	let staticWord = document.querySelector(".counter_desc");
 	let changingWord = document.querySelector(".counter");
-	staticWord.textContent = "Happy Birthday to My";
 	
 	document.querySelector(".gift_button").id = "unlocked";
 	document.querySelector(".gift_button").textContent = "Open the gift!";
 	document.querySelector(".gift_button").setAttribute('onclick',"giftButtonClick()");
 	
-	let words = ["my Kikai"," my darl"," the smartest girl"," the most beautiful girl"," the manja person"," manusia yg suka nyombong"," my everything"];
+	let words = [
+	"My Kikai",
+	"My Darling",
+	"The Smartest",
+	"The Most Beautiful",
+	"The Manja Person",
+	"Manusia Sombong",
+	"My Cat Lover",
+	"My everything!"];
 	let index = 0;
 	let wordsLoop = setInterval(updateWords,1500);
 	
@@ -98,6 +112,7 @@ function runAnimation(){
 			changingWord.textContent = words[index];
 			changingWord.id = "flip";
 			if (staticWord.id == "fade"){
+				staticWord.textContent = "Happy Birthday to";
 				staticWord.id = "flip";
 			}
 			index++;
@@ -113,23 +128,13 @@ function runAnimation(){
 
 }
 
-function update(){
-	countdown("Jan 10 2021, 18:7:15");
-}
-
-var loopCount = setInterval(update,1000);
-
-console.log("done");
 
 function giftButtonClick(){
 	document.querySelector(".gift_button").id="clicked";
 	document.querySelector(".tab").id = "flip";
 	let buttons = document.querySelectorAll(".tab_btn");
-	console.log(buttons);
 	for(let i=0;i<buttons.length;i++){
 		let id = buttons[i].getAttribute("id");
-		
-		console.log(id);
 		switch(id){
 			case "tb1":
 				buttons[i].setAttribute('onclick',"openLetter()");
@@ -138,7 +143,8 @@ function giftButtonClick(){
 				buttons[i].setAttribute('onclick',"openQuiz()");
 				break;
 			case "tb3":
-				buttons[i].setAttribute('onclick',"openRequest()");
+				//buttons[i].setAttribute('onclick',"openRequest()");
+				buttons[i].setAttribute('onclick',"");
 				break;
 		}
 	}
