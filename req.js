@@ -1,6 +1,3 @@
-//a0a68d08-e315-4544-a055-e43913850765
-
-
 let rest = document.querySelector(".reqRest");
 let slctElement = document.querySelector("#slctReq");
 let areaElement = document.querySelector(".specific");
@@ -26,7 +23,7 @@ function sendRequest(){
 		}
 		
 		Email.send({
-			SecureToken : "f5bb9dcd-b179-427f-9c40-8fd37ca2cfe4",
+			SecureToken : "9c6a296e-63c6-4321-90e6-bae51f25e9f1",
 			To : 'rozaan01@gmail.com',
 			From : "rozaan002@gmail.com",
 			Subject : "Birthday request!",

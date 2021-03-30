@@ -2,7 +2,7 @@ function getdiff(target){
 	let Hday = Date.parse(target);
     let now = Date.now();
     
-    return Hday - now
+    return Hday - now;
 }
 
 
